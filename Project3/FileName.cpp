@@ -41,7 +41,7 @@ int main()
 	}
 	*/
 	//Задание 3
-	int size;
+	/*int size;
 	cout << "Введите размер массива " << endl;
 	cin >> size;
 	int* arr = new int[size];
@@ -58,4 +58,55 @@ int main()
 
 	}
 	delete[]arr;
+	*/
+	//Задание 4
+	int ROW;
+	int COL;
+	
+	int sum = 0;
+	cout << "Введите ROW " << endl;
+	cin >> ROW;
+	cout << "Введите COL " << endl;
+	cin >> COL;
+	int COL2 = COL;
+	int* arr2 = new int[COL2];
+	int** arr = new int*[ROW];
+	for (int  i = 0; i <ROW; i++)
+	{
+		arr[i] = new int[COL];
+	}
+	for (int j = 0; j < COL; j++) {
+		arr2[j] = 0;
+	}
+	for (int i = 0; i < ROW; i++)
+	{
+		for (int j = 0; j < COL; j++)
+		{
+			
+			arr[i][j] = rand() % 100;
+			arr2[j] +=arr[i][j];
+
+		}
+	}
+	cout  << "Вывод массива:"<<endl;
+	for (int i = 0; i < ROW; i++)
+	{
+		for (int j = 0; j < COL; j++)
+		{
+			cout << arr[i][j]<<"\t";
+
+		}
+		cout << endl;
+	}
+	cout << "Вывод суммы столбцов:" << endl;
+	for (int j = 0; j < COL2; j++)
+	{
+		cout<< arr2[j] << "\t";
+	}
+	for (int i = 0; i < ROW; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+	delete[] arr2;
 }
