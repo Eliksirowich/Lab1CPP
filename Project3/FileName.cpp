@@ -30,7 +30,7 @@ int main()
 
 
 	//Задание 2
-	int a[10]{  };
+	/*int a[10]{};
 	cout << "Вывод массива";
 	for (int i = 0; i < 10; i++)
 	{
@@ -39,4 +39,23 @@ int main()
 		cout << a[i] << endl;
 		
 	}
+	*/
+	//Задание 3
+	int size;
+	cout << "Введите размер массива " << endl;
+	cin >> size;
+	int* arr = new int[size];
+	cout << "Введите числа для массива " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+		cout << endl;
+
+	}
+	for (int i = 0; i < size; i++)
+	{
+		cout<< arr[i] << endl;
+
+	}
+	delete[]arr;
 }
