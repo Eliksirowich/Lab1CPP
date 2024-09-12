@@ -60,7 +60,7 @@ int main()
 	delete[]arr;
 	*/
 	//Задание 4
-	int ROW;
+	/*int ROW;
 	int COL;
 	
 	int sum = 0;
@@ -109,4 +109,127 @@ int main()
 	}
 	delete[] arr;
 	delete[] arr2;
+	*/
+setvbuf(stdin, NULL, _IONBF, 0);
+setvbuf(stdout, NULL, _IONBF, 0);
+bool trust = false;
+
+struct Student {
+	string famil;
+	string name;
+	string facult;
+	int Nomzach;
+} stud[3];
+
+	
+  
+
+
+     for (int i = 0; i < 3; i++) {
+	cout << "Введите фамилию студента: ";
+	cin >> stud[i].famil;
+      }
+
+      for (int i = 0; i < 3; i++) {
+	cout << "Введите имя студента " << stud[i].famil << ": ";
+	cin >> stud[i].name;
+      }
+
+
+        for (int i = 0; i < 3; i++) {
+	cout << "Введите название факультета студента " << stud[i].famil << " " << stud[i].name << ": ";
+	cin >> stud[i].facult;
+          }
+
+
+  for (int i = 0; i < 3; i++) {
+	cout << "Введите номер зачётной книжки студента " << stud[i].famil << " " << stud[i].name << ": ";
+	cin >> stud[i].Nomzach;
+     }
+
+
+   for (int i = 0; i < 3; i++) {
+	cout << "Студент " << stud[i].famil << " " << stud[i].name
+		<< " обучается на факультете " << stud[i].facult
+		<< ", номер зачётной книжки: " << stud[i].Nomzach << endl;
+      }
+   string searchFamil;
+   string searchname;
+   string searchsearchfacult;
+   int Nomzach;
+   cout << "Введите фамилию для поиска: "<<endl;
+   cin >> searchFamil;
+   bool found = false;
+   for (int i = 0; i < 3; i++)
+   {
+	   if (stud[i].famil == searchFamil)
+	   {
+		   cout << "Найден студент: " << stud[i].famil << " " << stud[i].name
+			   << ", факультет: " << stud[i].facult
+			   << ", номер зачётной книжки: " << stud[i].Nomzach << endl;
+		   
+		   break;
+	   }
+   }
+   if (!found)
+   {
+	   cout << "Студент с фамилией " << searchFamil << " не найден." << endl;
+   }
+
+   cout << "Введите имя для поиска: " << endl;
+   cin >> searchname;
+   
+   for (int i = 0; i < 3; i++)
+   {
+	   if (stud[i].name == searchname)
+	   {
+		   cout << "Найден студент: " << stud[i].famil << " " << stud[i].name
+			   << ", факультет: " << stud[i].facult
+			   << ", номер зачётной книжки: " << stud[i].Nomzach << endl;
+
+		   break;
+	   }
+   }
+   if (!found)
+   {
+	   cout << "Студент сименем " << searchname << " не найден." << endl;
+   }
+
+   cout << "Введите название факультета для поиска: " << endl;
+   cin >> searchsearchfacult;
+   
+   for (int i = 0; i < 3; i++)
+   {
+	   if (stud[i].facult == searchsearchfacult)
+	   {
+		   cout << "Найден студент: " << stud[i].famil << " " << stud[i].name
+			   << ", факультет: " << stud[i].facult
+			   << ", номер зачётной книжки: " << stud[i].Nomzach << endl;
+
+		   break;
+	   }
+   }
+   if (!found)
+   {
+	   cout << "Студент с факультета " << searchsearchfacult << " не найден." << endl;
+   }
+   cout << "Введите номер зачётной книги для поиска: " << endl;
+   cin >> Nomzach;
+  
+   for (int i = 0; i < 3; i++)
+   {
+	   if (stud[i].Nomzach == Nomzach)
+	   {
+		   cout << "Найден студент: " << stud[i].famil << " " << stud[i].name
+			   << ", факультет: " << stud[i].facult
+			   << ", номер зачётной книжки: " << stud[i].Nomzach << endl;
+
+		   break;
+	   }
+   }
+   if (!found)
+   {
+	   cout << "Номер зачётной книжки " << Nomzach << " не найден." << endl;
+   }
+return 0;
 }
